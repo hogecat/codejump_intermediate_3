@@ -1,0 +1,329 @@
+@charset "utf-8";
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-size: 0.875rem;
+    color: #333;
+    min-height: 100vh;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    transition: all 0.5s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+.site-title {
+    line-height: 1px;
+    width: 180px;
+}
+
+.site-title a {
+    display: block;
+}
+
+.wrapper {
+    max-width: 1360px;
+    width: 100%;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
+.content {
+    padding-top: 120px;
+    padding-bottom: 160px;
+}
+
+.page-title {
+    font-size: 0.875rem;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+/* ヘッダー */
+#header {
+    height: 80px;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#navi {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    padding: 36px 50px;
+    transition: all 0.5s;
+    z-index: 20;
+    opacity: 0;
+}
+
+#navi a {
+    color: #fff;
+}
+
+#navi li {
+    margin-bottom: 14px;
+}
+
+/* ハンバーガーメニューが開いているときの表示 */
+.open #navi {
+    left: 0;
+    opacity: 1;
+}
+
+/* ハンバーガーメニューの線の設定（メニューが閉じている時） */
+.toggle_btn {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    transition: all 0.5s;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.toggle_btn span {
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    border-radius: 4px;
+    transition: all 0.5s;
+}
+
+.toggle_btn span:nth-child(1) {
+    top: 10px;
+}
+
+.toggle_btn span:nth-child(2) {
+    bottom: 10px;
+}
+
+/* ハンバーガーメニューの線の設定（メニューが開いている時）
+線の色を白に変更 */
+.open .toggle_btn span {
+    background-color: #fff;
+}
+
+.open .toggle_btn span:nth-child(1) {
+    -webkit-transform: translateY(4px) rotate(-45deg);
+    transform: translateY(4px) rotate(-45deg);
+}
+
+.open .toggle_btn span:nth-child(2) {
+    -webkit-transform: translateY(-4px) rotate(45deg);
+    transform: translateY(-4px) rotate(45deg);
+}
+
+/* マスクを消しておく */
+#mask {
+    display: none;
+    transition: all 0.5s;
+}
+
+/* 全面黒のマスクの設定 */
+.open #mask {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .8;
+    z-index: 10;
+    cursor: pointer;
+}
+
+#top {
+    padding-top: 80px;
+    padding-bottom: 160px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-list li {
+    width: 23%;
+    margin-bottom: 40px;
+}
+
+.product-list img {
+    margin-bottom: 10px;
+}
+
+.product-list li {
+    font-size: 0.75rem;
+}
+
+.link-text {
+    display: block;
+    text-align: center;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+.pagination li {
+    padding: 0 20px;
+}
+
+/* itemページ */
+#item {
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+#item .item-img {
+    width: 50%;
+}
+#item .item-text {
+    width: 42%;
+}
+#item .item-text p {
+    text-align: justify;
+    margin-bottom: 30px;
+}
+#item .item-text dl {
+    display: flex;
+    flex-wrap: wrap;
+}
+#item .item-text dt {
+    width: 30%;
+}
+#item .item-text dd {
+    width: 70%;
+}
+/* aboutページ */
+#about {
+    max-width: 600px;
+}
+#about p {
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+/* companyページ */
+#company {
+    max-width: 600px;
+}
+#company dl {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+#company dt {
+    width: 30%;
+    padding: 20px 10px;
+    border-bottom: solid 1px #dcdbdb;
+}
+#company dt:last-of-type {
+    border-bottom: none;
+}
+#company dd {
+    width: 70%;
+    padding: 20px 10px;
+    border-bottom: solid 1px #dcdbdb;
+}
+#company dd:last-of-type {
+    border-bottom: none;
+}
+
+#company iframe {
+    width: 100%;
+    height: 300px;
+    filter: grayscale();
+}
+
+
+
+
+/* フッター */
+#footer {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    /* ↑これは不要かも */
+}
+
+#footer .menu {
+    display: flex;
+}
+
+#footer .menu li {
+    margin-right: 30px;
+    font-size: 0.75rem;
+}
+
+#footer .copyright {
+    font-size: 0.625rem;
+}
+
+@media screen and (max-width: 900px) {
+    .product-list li {
+        width: 47%;
+    }
+    #footer {
+        flex-direction: column;
+    }
+    #footer .menu {
+        margin-bottom: 5px;
+    }
+    /* itemページ */
+    #item {
+        flex-direction: column;
+    }
+    #item .item-img {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    #item .item-text {
+        width: 100%;
+    }
+    /* companyページ */
+    #company dl {
+        flex-direction: column;
+    }
+    #company dt {
+        width: 100%;
+        border-bottom: none;
+        padding-bottom: 5px;
+    }
+    #company dd {
+        width: 100%;
+        padding-top: 5px;
+    }
+}
